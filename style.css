@@ -4,6 +4,8 @@
     --neutral-gray: #F4F6F7;
     --text-dark-gray: #2C3E50;
     --accent-green: #27AE60;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -22,15 +24,17 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Container */
 .container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 2.5rem;
-    background-color: white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    background-color: #fff;
+    box-shadow: 0 10px 30px var(--shadow-light);
     border-radius: 12px;
 }
 
+/* Header */
 header {
     text-align: center;
     margin-bottom: 2.5rem;
@@ -52,6 +56,7 @@ h1 {
     font-size: 1.2rem;
 }
 
+/* Navigation */
 nav {
     display: flex;
     justify-content: center;
@@ -85,6 +90,7 @@ nav a:hover::after {
     left: 0;
 }
 
+/* Main Sections */
 main section {
     margin-bottom: 2.5rem;
     padding-bottom: 1.5rem;
@@ -99,12 +105,13 @@ h2 {
     padding-left: 1rem;
 }
 
+/* Project Cards */
 .project {
     background-color: var(--neutral-gray);
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px var(--shadow-light);
 }
 
 .project h3 {
@@ -112,6 +119,7 @@ h2 {
     margin-bottom: 0.75rem;
 }
 
+/* Contact Section */
 #contact {
     text-align: center;
     display: flex;
@@ -133,7 +141,7 @@ h2 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-links a:hover {
@@ -141,6 +149,7 @@ h2 {
     color: var(--primary-blue);
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 1.5rem 0;
@@ -148,6 +157,7 @@ footer {
     opacity: 0.7;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 600px) {
     .container {
         padding: 1.5rem;
@@ -165,12 +175,17 @@ footer {
     }
 }
 
-/* Subtle Animations and Interactions */
+/* Subtle Animations & Interactions */
 .project, nav a, .social-links a {
     will-change: transform, box-shadow;
 }
 
 .project:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px var(--shadow-medium);
     transform: translateY(-5px);
 }
+
+/* Utility Classes */
+.mt-2 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 2rem; }
+.text-center { text-align: center; }
