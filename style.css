@@ -95,17 +95,34 @@ section h2 {
 /* Experience and Education */
 .experience-item, .education-item, .project, .volunteer-item {
     margin-bottom: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+    background-color: #f9fbfd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.experience-item:hover, .education-item:hover, .project:hover, .volunteer-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .experience-item h3, .education-item h3, .project h3, .volunteer-item h3 {
     color: var(--primary-color);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 4px;
 }
 
 .organization {
     font-weight: 500;
     font-style: italic;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    color: var(--secondary-color);
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: rgba(0, 102, 204, 0.08);
+    border-radius: 4px;
 }
 
 /* Skills section */
@@ -186,14 +203,14 @@ footer {
 }
 
 /* Accent elements for visual interest */
-.education-item h3:after, .experience-item h3:after {
+.education-item h3:after, .experience-item h3:after, .project h3:after, .volunteer-item h3:after {
     content: "";
     display: block;
     width: 50px;
     height: 3px;
     background-color: var(--accent-color);
     margin-top: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 /* Additional styling to highlight important information */
@@ -202,7 +219,29 @@ strong {
 }
 
 .education-item p, .experience-item p {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+}
+
+/* Timeline-like effect for experience and education */
+#experience, #education {
+    position: relative;
+}
+
+#experience .experience-item:not(:last-child):before,
+#education .education-item:not(:last-child):before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background-color: var(--border-color);
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    margin-left: -1px;
+}
+
+.experience-item, .education-item {
+    position: relative;
+    z-index: 1;
 }
 
 #awards ul li {
